@@ -1,4 +1,4 @@
 {
   "name": "Anythink Development Container",
-  "image": "darwilco/dar_test_devcontainer_image:0.0.1"
+  "image": "docker.io/darwilco/dar_test_devcontainer_image:0.0.1"
 }
