@@ -8,6 +8,6 @@ services:
         VARIANT: "3.10-bullseye"
         NODE_VERSION: "none"
     volumes:
-      - ./:/workspace:cached
+      - ../:/workspace:cached
     command: sleep infinity
     user: vscode
