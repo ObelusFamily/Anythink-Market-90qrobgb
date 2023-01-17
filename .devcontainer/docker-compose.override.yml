@@ -3,7 +3,7 @@ services:
     image: devcontainer-compose:code
     build:
       context: .
-      dockerfile: .devcontainer/Dockerfile
+      dockerfile: Dockerfile
       args:
         VARIANT: "3.10-bullseye"
         NODE_VERSION: "none"
