@@ -47,6 +47,8 @@
     "ghcr.io/devcontainers/features/node:1": {}
   },
 
+  "workspaceFolder": "/workspace",
+
   "settings": {
     "extensions.ignoreRecommendations": true,
     "workbench.startupEditor": "none",
