@@ -43,6 +43,12 @@
       "onAutoForward": "silent"
     }
   },
+  "runArgs": [
+    "--init"
+  ],
+  "mounts": [
+    "source=/var/run/docker.sock,target=/var/run/docker.sock,type=bind"
+  ],
   "postCreateCommand": "/bin/bash .devcontainer/setup.sh",
   "features": {
     "docker-in-docker": "latest",
