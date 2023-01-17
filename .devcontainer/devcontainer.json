@@ -1,61 +1,28 @@
 {
-  "name": "Anythink Development Container",
-  "forwardPorts": [
-    3000,
-    3001,
-    5433,
-    27017
-  ],
+  "name": "Python 3",
   "dockerComposeFile": [
-    "../docker-compose.yml",
-    "docker-compose.workspace.yml"
+    "docker-compose.yml",
+    "docker-compose.override.yml"
   ],
-  "service": "workspace",
-  "portsAttributes": {
-    "3000": {
-      "label": "Backend",
-      "elevateIfNeeded": true,
-      "requireLocalPort": true,
-      "onAutoForward": "silent"
-    },
-    "3001": {
-      "label": "Frontend",
-      "elevateIfNeeded": true,
-      "requireLocalPort": true,
-      "onAutoForward": "silent"
-    },
-    "5433": {
-      "label": "Database",
-      "elevateIfNeeded": true,
-      "requireLocalPort": true,
-      "onAutoForward": "silent"
-    },
-    "27017": {
-      "label": "Database",
-      "elevateIfNeeded": true,
-      "requireLocalPort": true,
-      "onAutoForward": "silent"
-    }
-  },
-  "postCreateCommand": "/bin/bash .devcontainer/setup.sh",
-  "features": {
-    "ghcr.io/devcontainers/features/docker-in-docker:2": {},
-    "ghcr.io/devcontainers/features/github-cli:1": {},
-    "ghcr.io/devcontainers/features/sshd:1": {
-      "version": "latest"
-    },
-    "ghcr.io/devcontainers/features/node:1": {}
-  },
-
+  "service": "code",
   "workspaceFolder": "/workspace",
-
   "settings": {
-    "extensions.ignoreRecommendations": true,
-    "workbench.startupEditor": "none",
-    "workbench.colorTheme": "Visual Studio Dark",
-    "workbench.colorCustomizations": {},
-    "workbench.welcomePage.walkthroughs.openOnInstall": false,
-    "workbench.welcomePage.experimental.videoTutorials": "off",
-    "github.codespaces.defaultExtensions": []
-  }
+    "python.defaultInterpreterPath": "/usr/local/bin/python",
+    "python.linting.enabled": true,
+    "python.linting.pylintEnabled": true,
+    "python.formatting.autopep8Path": "/usr/local/py-utils/bin/autopep8",
+    "python.formatting.blackPath": "/usr/local/py-utils/bin/black",
+    "python.formatting.yapfPath": "/usr/local/py-utils/bin/yapf",
+    "python.linting.banditPath": "/usr/local/py-utils/bin/bandit",
+    "python.linting.flake8Path": "/usr/local/py-utils/bin/flake8",
+    "python.linting.mypyPath": "/usr/local/py-utils/bin/mypy",
+    "python.linting.pycodestylePath": "/usr/local/py-utils/bin/pycodestyle",
+    "python.linting.pydocstylePath": "/usr/local/py-utils/bin/pydocstyle",
+    "python.linting.pylintPath": "/usr/local/py-utils/bin/pylint"
+  },
+  "extensions": [
+    "ms-python.python",
+    "ms-python.vscode-pylance"
+  ],
+  "remoteUser": "vscode"
 }

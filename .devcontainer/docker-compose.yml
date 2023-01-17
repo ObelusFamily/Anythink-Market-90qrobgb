@@ -1,0 +1,16 @@
+services:
+  app:
+    image: devcontainer-compose:app
+    build:
+      context: .
+      dockerfile: Dockerfile
+      args:
+        - HELLO_WORLD="hello"
+
+  other_app:
+    image: devcontainer-compose:app
+    command: python -m app "hello"
+
+  redis:
+    image: redis:6
+    command: redis-server --requirepass "password"
